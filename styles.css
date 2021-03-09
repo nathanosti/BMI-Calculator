@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFF;
+  --fcolor: #E03122;
+  --shadow: #94271E;
+  --bgcolor: #EEE;
+  --gray: #BBB;
+  --blue: #4F92E0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgcolor);
+  padding: 15px;
+}
+
+.container {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 2px rgba(148, 39, 30, 0.5);
+  padding: 10px;
+}
+
+.container .tittle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--fcolor);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--fcolor);
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+.container form input:first-child {
+  margin-top: 0;
+}
+
+.container form input {
+  width: 100%;
+  height: 6vh;
+  border: none;
+  border: 1px solid var(--fcolor);
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin: 5px;
+  transition: all 0.3s;
+}
+
+.container form input:focus {
+  outline: none;
+  border: none;
+  border: 1px solid var(--blue);
+}
+
+.container form input::placeholder {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.container form button {
+  margin-top: 5px;
+  width: 100%;
+  height: 8vh;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--fcolor);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container form button:hover {
+  background-color: var(--blue);
+}
+
+.container .results-container {
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+  height: 15vh;
+}
+
+.container .results-container p {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+  color: var(--white);
+}
