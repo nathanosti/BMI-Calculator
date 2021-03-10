@@ -9,17 +9,17 @@ function bmi() {
   if (name !== '' && height !== '' && weight !== '') {
     const result = weight/(height*height);
     if (result == 0 || result < 18.5) {
-      resultParagraph.textContent = `${name} seu IMC é ${result.toFixed(2)} portanto você está com peso baixo!`
+      resultParagraph.textContent = `${name} your BMI is ${result.toFixed(2)} so you are underweight!`
     } else if(result == 18.5 || result < 24.9) {
-      resultParagraph.textContent = `${name} seu IMC é ${result.toFixed(2)} portanto você está com peso normal!`
+      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you are normal weight!`
     } else if(result == 24.9 || result < 29.9 ) {
-      resultParagraph.textContent = `${name} seu IMC é ${result.toFixed(2)} portanto você está com sobre-peso!`
+      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you are overweight!`
     }  else if(result == 30 || result < 34.9 ) {
-      resultParagraph.textContent = `${name} seu IMC é ${result.toFixed(2)} portanto você está com Obesidade (Grau 1)!`
+      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you are overweight (Grade 1)!`
     }  else if(result == 35 || result < 39.9 ) {
-      resultParagraph.textContent = `${name} seu IMC é ${result.toFixed(2)} portanto você está com Obesidade Severa (Grau 2)!`
+      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you have Severe Obesity (Grade 2)!`
     } else {
-      resultParagraph.textContent = `${name} seu IMC é ${result.toFixed(2)} portanto você está com Obesidade Morbida (Grau 3)!`
+      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you have Morbid Obesity (Grade 3)!`
     }
 
   } else {
