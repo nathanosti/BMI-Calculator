@@ -6,25 +6,17 @@ function bmi() {
   const weight = parseFloat(document.getElementById('weight').value);
   const resultParagraph = document.getElementById('result');
 
-  if (name !== '' && height !== '' && weight !== '') {
-    const result = weight/(height*height);
-    if (result == 0 || result < 18.5) {
-      resultParagraph.textContent = `${name} your BMI is ${result.toFixed(2)} so you are underweight!`
-    } else if(result == 18.5 || result < 24.9) {
-      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you are normal weight!`
-    } else if(result == 24.9 || result < 29.9 ) {
-      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you are overweight!`
-    }  else if(result == 30 || result < 34.9 ) {
-      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you are overweight (Grade 1)!`
-    }  else if(result == 35 || result < 39.9 ) {
-      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you have Severe Obesity (Grade 2)!`
-    } else {
-      resultParagraph.textContent = `${name} your BMI is ${result.toFixed (2)} so you have Morbid Obesity (Grade 3)!`
-    }
+  const result = weight/(height*height);
+    
+  const sulfix = (result == 0 || result < 18.5) ? 'so you are underweight!' :
+                 (result == 18.5 || result < 24.9) ? 'so you are normal weight!' :
+                 (result == 24.9 || result < 29.9) ? 'so you are overweight!' :
+                 (result == 30 || result < 34.9) ? 'so you are overweight (Grade 1)!' :
+                 (result == 35 || result < 39.9) ? 'so you are overweight (Grade 2)!' : 'so you have Morbid Obesity (Grade 3)'
+                  
+  const successMessage = `${name} your BMI is ${result.toFixed(2)} ${sulfix}`;
+  const errorMessage = 'FULL FILL IN ALL FIELDS';
 
-  } else {
-    resultParagraph.textContent = 'Fill in all fields!'
-  }
+  resultParagraph.textContent = (name && height && weight) ? successMessage : errorMessage
 }
-
 calculate.addEventListener('click', bmi);
